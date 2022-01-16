@@ -24,13 +24,16 @@ const Filter = () => {
         <div>
             <form >
             <select onClick={handleGenre} >
-                <option value="rock" >rock</option>
-                <option value="rock-roll">rock-roll</option>
-                <option value="hard-rock" >hard-rock</option>
-                
+                <option value="rock" >Rock</option>
+                <option value="rock-roll">Rock & Roll</option>
+                <option value="hard-rock" >Hard Rock</option>
+                <option value="grunge" >Grunge</option>
+                <option value="power-metal" >Power Metal</option>
+                <option value="heavy-metal" >Heavy Metal</option>
+                <option value="black-metal" >Black Metal</option>
+                <option value="progressive-metal" >Progressive Metal</option>  
             </select>
             </form>
-            <span>{genre}</span>
             {
                 resultado.length === 0 ?(<p>No tengo datos</p>) : 
                 (resultado.map(item => (

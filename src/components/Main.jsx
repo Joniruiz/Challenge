@@ -1,8 +1,11 @@
 import React from 'react'
 import useFecth from '../hooks/useFetch'
 import {Link} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const Main = () => {
+
+    let {name} = useParams()
 
     let url = `https://my-json-server.typicode.com/improvein/dev-challenge/bands`
     
@@ -20,7 +23,9 @@ const Main = () => {
                        
                        bands.map(item =>(
                            <li key={item.id}>{item.name}
-                           <Link to={`https://my-json-server.typicode.com/improvein/dev-challenge/bands?q=${name}`}></Link>
+                           <Link to={`/${item.name}`}>
+                               {item.name}
+                           </Link>
                            
                            </li>
                        ))
