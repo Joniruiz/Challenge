@@ -5,14 +5,14 @@ import Login from '../components/Login/Login'
 import PrivateRouter from "./PrivateRouter";
 const AppRouter = () => {
 
-    const  logeado = useSelector((store) => store.bands.islogged)
+    const  logIn = useSelector((store) => store.bands.islogged)
 
     return (
         <div>
             
                 <Routes>
-                    <Route path='/login' element = {!logeado ? <Login/> : <Navigate to ='/'/> } />
-                    <Route path='*' element ={ (logeado ? <PrivateRouter/> : <Navigate to='/login'/>)} />
+                    <Route path='/login' element = {!logIn ? <Login/> : <Navigate to ='/'/> } />
+                    <Route path='*' element ={ (logIn ? <PrivateRouter/> : <Navigate to='/login'/>)} />
                 </Routes>
             
         </div>

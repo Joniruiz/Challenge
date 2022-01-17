@@ -20,7 +20,7 @@ const BandsResult = () => {
     return (
         <div className='container-bandsResult'>
             {
-                result.length === 0 ? (<p>No hay resultados</p>) :
+                result.length === 0 ? (<p>I dont have results</p>) :
                 (result.map(item =>(
                     
                     <Link to={`/${item.name}`}>

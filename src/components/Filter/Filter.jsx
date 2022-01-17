@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { useDispatch} from 'react-redux'
-import {filter} from '../actions/actions'
+import {filter} from '../../actions/actions'
 import './Filter.css'
 
 const Filter = () => {
@@ -16,9 +16,9 @@ const Filter = () => {
     }, [genre])
  
     const handleGenre = function (e) {
-        const opcion = e.target.value
-        console.log(opcion)
-        setGenre(opcion)
+        const option = e.target.value
+        
+        setGenre(option)
     }
 
     return (
