@@ -1,10 +1,6 @@
 
 import { types } from "../types/types";
 
-
-
-
-
 export const allBands =() => async (dispatch) =>{
     try {
         const res = await fetch('https://my-json-server.typicode.com/improvein/dev-challenge/bands')
@@ -55,3 +51,23 @@ export const login = (user) => {
         
     }
 }
+
+ export const filter = (result) => async(dispatch, getState) =>{
+    const filter = getState().bands.allBands
+    console.log(filter)
+    try {
+        dispatch({
+            type: types.filter,
+            payload: result
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const cleanSearch  = () => async (dispatch) =>{
+    dispatch({
+        type: types.cleanSearch,
+        payload:[]
+    })
+} 

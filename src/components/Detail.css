@@ -14,3 +14,8 @@
     margin: 0 auto;
     border: 1px solid white;
 }
+
+.error-detail{
+    background: black;
+    color: white;
+}

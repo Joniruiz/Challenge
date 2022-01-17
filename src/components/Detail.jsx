@@ -1,14 +1,19 @@
 import React,{useEffect,useState} from 'react'
 import {useParams,Link} from 'react-router-dom'
+import {useDispatch } from 'react-redux'
 import CardDetail from './CardDetail/CardDetail'
+import {cleanSearch} from '../actions/actions'
 import './Detail.css'
+import Spinner from './Spinner/Spinner'
+
 
 
 const Detail = () => {
 
     let {name} = useParams()
     const [bandDetail , setBandDetail] = useState('')
-    const [albums , setAlbums] = useState('')
+   
+    const dispatch = useDispatch()
 
     useEffect(() => {
        fetch(`https://my-json-server.typicode.com/improvein/dev-challenge/bands?q=${name}`)
@@ -16,20 +21,18 @@ const Detail = () => {
         .then(data => (setBandDetail(data)) )
     }, [])
  
-   /*  useEffect(() =>{
-        fetch(`https://my-json-server.typicode.com/improvein/dev-challenge/albums?bandId_like=${bandDetail.id}`)
-        .then(res => res.json())
-        .then(data => setAlbums(data))
-    },[bandDetail])
-    console.log('albunes',albums)
- */
     console.log(bandDetail)
+
+    const clickHandlerSearchResults = () =>{
+        dispatch(cleanSearch())
+    }
+
     return (
-        <div>
+        <div className=''>
             {
                 bandDetail.length === 0 ?
                 ( 
-                    <p>No tengo detalle</p>
+                    <Spinner/>
                 ) 
                 :
                 (
@@ -40,11 +43,13 @@ const Detail = () => {
             }
             <div className='btn-container'>
 
+            
+            <Link to={'/'} onClick={()=> clickHandlerSearchResults()}>
             <button className='btn-home'>
-
-            <Link to={'/'}>Inicio</Link>
+                Home
             </button>
-
+            </Link>
+           
             </div>
         </div>
     )

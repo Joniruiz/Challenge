@@ -12,7 +12,7 @@ const CardDetail = ({name,genre,year,country,members}) => {
         <img className='img-detail' src={`./images/${name}.jpg`} alt="" />
         <div className='container-info'>
         <div className=''>
-            <h1>Name of the band</h1>
+            <h1>Band</h1>
             <p className='info'>{name}</p>
         </div>
         <div>
@@ -27,8 +27,8 @@ const CardDetail = ({name,genre,year,country,members}) => {
             <p>Country</p>
             <p className='info' >{country}</p>
         </div>
-        <ul>
-            <li>Miembros</li>
+        <ul className='members'>
+            <li >Members</li>
             <ul className='info' >{members.map(item => (
                 <li>{item.name}</li>
             ))}</ul>

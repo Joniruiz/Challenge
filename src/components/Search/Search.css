@@ -1,11 +1,14 @@
 .btn-search{
     margin-left: 25px;
     padding: 5px;
-    background-color: white;
-    color: blueviolet;
+    background-color: black;
+    color: white;
     font-weight: bold;
     border-radius: 5px;
+    border: 1px solid white;
+    
 }
 .input-search{
     color: black;
+    padding: 3px;
 }

@@ -1,14 +1,20 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import {Link} from 'react-router-dom'
 import Card from '../Card/Card'
 import './BandsResult.css'
+import {cleanSearch} from '../../actions/actions'
+
 
 
 const BandsResult = () => {
 
+    const dispatch = useDispatch()
     const result = useSelector((store) => store.bands.searchResult)
     
+    const clickHandlerSearchResults = () =>{
+        dispatch(cleanSearch())
+    }
 
 
     return (
@@ -22,8 +28,11 @@ const BandsResult = () => {
                     </Link>
                     
                     
-                )))
-            }
+                    )))
+                }
+                <button className='btn-home'>
+                <Link to='/' onClick={() => clickHandlerSearchResults()}>Home</Link>
+                </button>
         </div>
     )
 }
