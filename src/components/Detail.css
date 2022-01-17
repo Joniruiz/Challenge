@@ -1,0 +1,16 @@
+.btn-container{
+    width: 100%;
+    background: black;
+    padding-bottom: 10px;
+    
+}
+.btn-home{
+    padding: 15px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    margin: 0 auto;
+    border: 1px solid white;
+}

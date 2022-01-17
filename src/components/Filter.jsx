@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import './Filter.css'
 
 const Filter = () => {
 
@@ -21,9 +22,10 @@ const Filter = () => {
 
   
     return (
-        <div>
+        <div className='container-filter'>
             <form >
-            <select onClick={handleGenre} >
+            <select id='selectFilter' onClick={handleGenre} >
+                <option value="null" >All</option>
                 <option value="rock" >Rock</option>
                 <option value="rock-roll">Rock & Roll</option>
                 <option value="hard-rock" >Hard Rock</option>

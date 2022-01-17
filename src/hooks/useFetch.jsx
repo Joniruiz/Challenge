@@ -28,7 +28,7 @@ function useFecth (url){
             console.log(error)
         }
 
-    }, [url])
+    }, [])
     return state
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../components/Header/Header'
-import Main from '../components/Main'
+import Main from '../components/Main/Main'
 import Filter from '../components/Filter'
 import { useSelector } from 'react-redux'
-import BandsResult from '../components/BandsResult'
-import Card from '../components/Card/Card'
+import BandsResult from '../components/Result/BandsResult'
+
 
 const HomePage = () => {
 
@@ -17,7 +17,7 @@ const HomePage = () => {
             {
                 result.length > 0 ? <BandsResult/> : <Main/>
             }
-            <Card/>
+            
         </>
     )
 }

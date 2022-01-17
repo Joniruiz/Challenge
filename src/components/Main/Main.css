@@ -1,0 +1,9 @@
+.container-main{
+    background: black
+}
+
+.container-main > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

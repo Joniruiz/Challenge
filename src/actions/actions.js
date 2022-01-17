@@ -1,4 +1,22 @@
+
 import { types } from "../types/types";
+
+
+
+
+
+export const allBands =() => async (dispatch) =>{
+    try {
+        const res = await fetch('https://my-json-server.typicode.com/improvein/dev-challenge/bands')
+        const data = await res.json()
+        dispatch({
+            type:types.allBands,
+            payload: data
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export const search = (keywords) => {
     return async (dispatch) =>{

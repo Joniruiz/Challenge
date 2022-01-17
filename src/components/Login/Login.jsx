@@ -18,10 +18,7 @@ const Login = () => {
         dispatch(login(user))   
     }, [user])
     
-    const customer = useSelector((store) => store.bands.user)
-    const logeado = useSelector((store) => store.bands.islogged)
-
-   
+      
     
     return (
         <div>
