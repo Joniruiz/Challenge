@@ -14,7 +14,7 @@ const Main = () => {
     
     useEffect (() =>{
         dispatch(allBands())
-        console.log('aca esta la data',bands)
+        
     },[])
 
     return (
