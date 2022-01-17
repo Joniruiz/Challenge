@@ -1,11 +1,10 @@
 import React from 'react'
 import useFecth from '../hooks/useFetch'
 import {Link} from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import Card from '../components/Card/Card'
+
 
 const Main = () => {
-
-    let {name} = useParams()
 
     let url = `https://my-json-server.typicode.com/improvein/dev-challenge/bands`
     
@@ -14,6 +13,7 @@ const Main = () => {
 
     return (
         <div>
+            
            <ul>
                {
                    loading ? (
@@ -22,17 +22,20 @@ const Main = () => {
                    (
                        
                        bands.map(item =>(
-                           <li key={item.id}>{item.name}
+                           
+                           
                            <Link to={`/${item.name}`}>
-                               {item.name}
+                               <Card title={item.name} images={`../../../assets/images/Queen.jpg`} text={item.name} year={item.year}/>
                            </Link>
                            
-                           </li>
+                           
                        ))
                    )
                }
+               
            </ul>
-
+          
+         
         </div>
     )
 }

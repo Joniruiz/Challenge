@@ -35,7 +35,7 @@ const Filter = () => {
             </select>
             </form>
             {
-                resultado.length === 0 ?(<p>No tengo datos</p>) : 
+                resultado.length === 0 ?(null) : 
                 (resultado.map(item => (
                     <li key={item.id}>{item.name}</li>
                 )))

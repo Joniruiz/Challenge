@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import useForm from '../hooks/useForm'
-import {search} from '../actions/search'
-
+import useForm from '../../hooks/useForm'
+import {search} from '../../actions/actions'
+import './Search.css'
 
 
 
@@ -22,12 +22,14 @@ const Search = () => {
         
     }
     return (
-        <div>
+        <div className='container'>
             <form onSubmit={handleSearch}>
-                <input type="search" name='keywords' onChange={handleInputChange} value={keywords} /><button type='submit'>Enviar</button>
+                <input className='input-search' type="search" name='keywords' onChange={handleInputChange} value={keywords} /><button className='btn-search' type='submit'>Enviar</button>
             </form>
 
+
         </div>
+
     )
 }
 

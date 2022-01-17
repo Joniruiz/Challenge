@@ -1,0 +1,11 @@
+.btn-search{
+    margin-left: 25px;
+    padding: 5px;
+    background-color: white;
+    color: blueviolet;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.input-search{
+    color: black;
+}

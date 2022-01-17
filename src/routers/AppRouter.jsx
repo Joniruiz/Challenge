@@ -1,15 +1,18 @@
-import { BrowserRouter as Router ,Routes ,Route } from "react-router-dom";
-import Main from '../components/Main'
-import Detail from '../components/Detail'
+import {Routes ,Route, Navigate } from "react-router-dom";
+import { useSelector } from 'react-redux'
 import React from 'react'
-
+import Login from '../components/Login/Login'
+import PrivateRouter from "./PrivateRouter";
 const AppRouter = () => {
+
+    const  logeado = useSelector((store) => store.bands.islogged)
+
     return (
         <div>
             
                 <Routes>
-                    <Route path= '/' element={<Main/>} />
-                    <Route path='/:name' element={<Detail/>} />
+                    <Route path='/login' element = {!logeado ? <Login/> : <Navigate to ='/'/> } />
+                    <Route path='*' element ={ (logeado ? <PrivateRouter/> : <Navigate to='/login'/>)} />
                 </Routes>
             
         </div>

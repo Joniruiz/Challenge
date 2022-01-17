@@ -1,18 +1,27 @@
 import React,{useEffect,useState} from 'react'
 import {useParams,Link} from 'react-router-dom'
+import Card from './Card/Card'
 
 const Detail = () => {
 
     let {name} = useParams()
     const [bandDetail , setBandDetail] = useState('')
-    
+    const [albums , setAlbums] = useState('')
 
-    useEffect( async() => {
-       await fetch(`https://my-json-server.typicode.com/improvein/dev-challenge/bands?q=${name}`)
+    useEffect(() => {
+       fetch(`https://my-json-server.typicode.com/improvein/dev-challenge/bands?q=${name}`)
         .then(res => res.json())
-        .then(data => setBandDetail(data))
+        .then(data => (setBandDetail(data)) )
     }, [])
+ 
+    useEffect(() =>{
+        fetch(`https://my-json-server.typicode.com/improvein/dev-challenge/albums?bandId_like=${bandDetail.id}`)
+        .then(res => res.json())
+        .then(data => setAlbums(data))
+    },[bandDetail])
+    console.log('albunes',albums)
 
+    console.log(bandDetail)
     return (
         <div>
             {
@@ -23,7 +32,7 @@ const Detail = () => {
                 :
                 (
                     bandDetail.map(item => (
-                    <li key={item.id}>{item.name}-{item.country}</li>
+                    <Card title={item.name} year={item.year}/>
                 )
                 ))
             }
