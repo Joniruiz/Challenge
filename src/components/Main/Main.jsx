@@ -25,8 +25,8 @@ const Main = () => {
                    (
                        bands?.map(item =>(
                            
-                           <Link className='.container' to={`/${item.name}`}>
-                               <Card key={item.id} title={item.name}  text={item.name} year={item.year} members={item.members}/>
+                           <Link key={item.id}  className='.container' to={`/${item.name}`}>
+                               <Card title={item.name}  text={item.name} year={item.year} members={item.members}/>
                            </Link>
                            
                            

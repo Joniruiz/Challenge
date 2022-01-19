@@ -21,7 +21,6 @@ const Detail = () => {
         .then(data => (setBandDetail(data)) )
     }, [])
  
-    console.log(bandDetail)
 
     const clickHandlerSearchResults = () =>{
         dispatch(cleanSearch())

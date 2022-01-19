@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {useForm} from 'react-hook-form'
 import { useDispatch,useSelector } from 'react-redux'
-import {login} from '../../actions/actions'
+import {login,allBands} from '../../actions/actions'
 
 const Login = () => {
 
@@ -15,7 +15,8 @@ const Login = () => {
         setUser(data)
     }
     useEffect(() => {
-        dispatch(login(user))   
+        dispatch(login(user))
+        dispatch(allBands())
     }, [user])
     
       
