@@ -8,14 +8,7 @@ import {allBands} from '../../actions/actions'
 
 const Main = () => {
 
-    const dispatch = useDispatch()
-
     const bands =useSelector((store) => store.bands.allBands)
-    
-    useEffect (() =>{
-        dispatch(allBands())
-        
-    },[])
 
     return (
         <div className='container-main'>    
