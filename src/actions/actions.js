@@ -52,9 +52,7 @@ export const login = (user) => {
     }
 }
 
- export const filter = (result) => async(dispatch, getState) =>{
-    const filter = getState().bands.allBands
-    console.log(filter)
+ export const filter = (result) => async(dispatch) =>{
     try {
         dispatch({
             type: types.filter,

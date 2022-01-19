@@ -15,7 +15,7 @@ const HomePage = () => {
             <Header/>
             <Filter/>
             {
-                result.length > 0 ? <BandsResult/> : <Main/>
+                result?.length > 0 ? <BandsResult/> : <Main/>
             }
             
         </>
