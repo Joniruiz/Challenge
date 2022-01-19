@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {useForm} from 'react-hook-form'
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import {login,allBands} from '../../actions/actions'
 
 const Login = () => {
@@ -39,6 +39,7 @@ const Login = () => {
                 }
                 )}
             />
+            
         </div>
         <div>
             <input className="w-full p-4 text-sm bg-gray-50 focus:outline-none border border-gray-200 rounded text-gray-600" type="password" placeholder="Password"  {...register ('password',{
@@ -46,7 +47,7 @@ const Login = () => {
             />
         </div>
         <div>
-            <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 rounded text-sm font-bold text-gray-50 transition duration-200">Sign In</button>
+            <button type='' className="w-full py-4 bg-blue-600 hover:bg-blue-700 rounded text-sm font-bold text-gray-50 transition duration-200">Sign In</button>
         </div>
     </div>
 </section>
