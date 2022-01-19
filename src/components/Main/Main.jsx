@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import './Main.css'
 import Card from '../Card/Card'
-import { useDispatch,useSelector } from 'react-redux'
-import {allBands} from '../../actions/actions'
+import {useSelector } from 'react-redux'
 
 
 const Main = () => {
